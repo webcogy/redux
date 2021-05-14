@@ -7,8 +7,10 @@ import './exercise';
 import { Provider } from 'react-redux'; // react 프로젝트에서 리덕스를 적용할 수 있음.
 import { createStore } from 'redux';
 import rootReducer from './modules';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(rootReducer);
+
+const store = createStore(rootReducer, composeWithDevTools() );
 console.log(store.getState());
 
 ReactDOM.render(

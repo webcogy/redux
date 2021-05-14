@@ -8,12 +8,13 @@ const initialState = {
     list:[]
 };
 
+// actionTypes
 const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
 const CHANGE_TEXT = 'CHANGE_TEXT';
 const ADD_TO_LIST = 'ADD_TO_LIST';
 
-
+// actions
 const increase = () => ({
     type:INCREASE,
 });
@@ -31,6 +32,7 @@ const addToList = item => ({
     item
 });
 
+// reducer
 function reducer(state = initialState, action){
     switch(action.type){
         case INCREASE:
