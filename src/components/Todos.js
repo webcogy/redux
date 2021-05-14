@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 
 // 하나의 todo
-function TodoItem({ todo, onToggle }){
+const TodoItem = React.memo(function TodoItem({ todo, onToggle }){
     return (
         <li
             style={{
@@ -17,10 +17,10 @@ function TodoItem({ todo, onToggle }){
             {todo.text}
         </li>
     )
-}
+})
 
 // 여러개의 todo
-function TodoList({ todos, onToggle }){
+const TodoList = React.memo(function TodoList({ todos, onToggle }){
     return(
         <ul>
             {
@@ -34,7 +34,7 @@ function TodoList({ todos, onToggle }){
             }
         </ul>
     )
-}
+});
 
 function Todos({ todos, onCreate, onToggle }){
     // 꼭 모든 상태를 리덕스에서 관리해야하는 건 아니다. useState를 써도 됨
@@ -64,4 +64,4 @@ function Todos({ todos, onCreate, onToggle }){
     )
 }
 
-export default Todos;
+export default React.memo(Todos);
